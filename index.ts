@@ -11,9 +11,17 @@
 
 
 import {UserData} from './user-data';
+
 let user : UserData;
 
-function getData<T>(arg: T) : void{
+function getData <T>(arg: T) : void{
+ 
+  if(isNumber(arg)){
+    console.log("Is a number");
+
+  }else{
+    console.log("Is a name ")
+  }
   console.log(arg);
 }
 
@@ -24,4 +32,11 @@ user = {
 };
 
 let a = getData<string>(user.name);
-let b = getData<number>(user.phone);
+let b = getData<number>(user.age);
+let c = getData<number>(user.phone);
+
+function isNumber<T>(arg: T) : boolean{
+  return typeof arg === "number";
+ 
+}
+
